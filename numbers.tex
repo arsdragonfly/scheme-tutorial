@@ -1,0 +1,104 @@
+\section{Numbers}
+
+\begin{frame}[fragile]
+  \frametitle{Arithmetic on Natural Numbers}
+    \begin{itemize}
+      \item What's the answer of \mintinline{scheme}{(add1 0)}?
+      \item \emph{1}.
+      \pause
+      \item What's the answer of \mintinline{scheme}{(sub1 3)}?
+      \item \emph{2}.
+      \pause
+      \item What's the answer of \mintinline{scheme}{(add1 (add1 0))}?
+      \item \emph{It's the answer of \mintinline{scheme}{(add1 1)}.}
+      \pause
+      \item What's the answer of \mintinline{scheme}{(add1 1)} then?
+      \item \emph{2}.
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Arithmetic on Natural Numbers}
+    \begin{itemize}
+      \item What's the answer of \mintinline{scheme}{(zero? 0)}?
+      \item \mintinline{scheme}{#t}\emph{, which means "true".}
+      \pause
+      \item What's the answer of \mintinline{scheme}{(zero? 810)}?
+      \item \mintinline{scheme}{#f}\emph{, which means "false".}
+      \pause
+      \item What's the answer of \mintinline{scheme}{(zero? (sub1 (sub1 2)))}?
+      \item \mintinline{scheme}{#t}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{$\lambda$ ?}
+    \begin{itemize}
+      \item What's the answer of \mintinline{scheme}{(lambda (x) (add1 (add1 x)))}?
+      \item \emph{A \textrm{lambda expression}, which is similar to a mathematical function.}
+      \pause
+      \item What's the answer of \\
+      \mint{scheme}{(define add2 (lambda (x) (add1 (add1 x))))}
+      \mint{scheme}{(add2 (add1 3))}
+      ?
+      \item \emph{6.}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{$\lambda$ ?}
+    \begin{itemize}
+      \item How does \mintinline{scheme}{(add2 (add1 3))} work?
+      \item \emph{We first ask the question: what is \mintinline{scheme}{(add1 3)}?}
+      \pause
+      \item What is the answer of \mintinline{scheme}{(add1 3)}?
+      \item \emph{4.}
+      \pause
+      \item What's the answer of \mintinline{scheme}{(add2 4)} then?
+      \item \emph{It becomes \mintinline{scheme}{((lambda (x) (add1 (add1 x))) 4)}.}
+      \pause
+      \item Then?
+      \item \emph{We substitute \textrm{x} for \textrm{4} in the \textrm{lambda expression}.}
+      \pause
+      \item What will we get then?
+      \item \emph{\mintinline{scheme}{(add1 (add1 4))}}
+      \pause
+      \item Is that how we get 6?
+      \item \emph{Yes.}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\mintinline{scheme}{cond?}}
+  \begin{itemize}
+    \item How does the following definition work out?
+    \begin{minted}{scheme}
+      (define one?
+        (lambda (x)
+          (cond
+            ((zero? (sub1 x)) #t)
+            (else #f))))
+    \end{minted}
+    \item \emph{We'll figure it out soon\texttrademark.}
+    \pause
+    \item What's the answer of \mintinline{scheme}{(one? 1)}?
+    \item \mintinline{scheme}{#t}.
+    \pause
+    \item What's the answer of \mintinline{scheme}{(one? 2)}?
+    \item \mintinline{scheme}{#f}.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{\mintinline{scheme}{cond?}}
+    \begin{minted}{scheme}
+      (define one?
+        (lambda (x)
+          (cond
+            ((zero? (sub1 x)) #t)
+            (else #f))))
+    \end{minted}
+  \begin{itemize}
+    \item How does the above definition work out?
+  \end{itemize}
+\end{frame}

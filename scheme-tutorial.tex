@@ -1,0 +1,84 @@
+\documentclass[xcolor=pdftex,dvipsnames,table]{beamer}
+\usepackage{beamerthemesplit}
+\usepackage{minted}
+\usepackage{hyperref}
+\usepackage{textcomp}
+\usetheme{Madrid}
+\usecolortheme{crane}
+\title{An Alternative Introduction to Programming}
+\subtitle{Read: A Tutorial of the Scheme Programming language}
+\author{Shen Zheyu}
+\date{\today}
+\begin{document}
+\maketitle
+\begin{frame}[allowframebreaks]
+  \frametitle{Table of Contents}
+  \tableofcontents
+\end{frame}
+\begin{frame}
+  \frametitle{Introduction}
+  \begin{itemize}
+    \item Shen Zheyu, sophomore ECE student
+    \item My GitHub: \url{http://github.com/arsdragonfly/}
+    \item SSTIA projects \url{https://github.com/SSTIA}
+    %\vspace{1.3in}
+  \end{itemize}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+      \begin{center}
+        \begin{figure}
+          \includegraphics[width=0.6\textwidth]{avatar}
+        \end{figure}
+      \end{center}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \vspace*{\fill}
+      \begin{center}
+        \begin{figure}
+          \includegraphics[width=0.6\textwidth]{SSTIA}
+        \end{figure}
+      \end{center}
+    \end{column}
+  \end{columns}
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Overview}
+  This seminar is intended to provide a different introduction to programming from VG101 (and arguably many other courses).
+  In a (hopefully) friendly way, you'll learn many useful things unlikely to be found in other introductory material.
+  \pause
+
+  Much of the content is adapted from \textcolor{Blue}{\textit{The Little Schemer, Fourth Edition}} by D. P. Friedman and M. Felleisen.
+  If you're very interested, You may also want to read \textcolor{Blue}{\textit{Structure and Interpretation of Computer Programs}} by H. Abelson and G. J. Sussman.
+  \begin{center}
+    \begin{figure}
+      \includegraphics[width=0.4\textwidth]{SICP.png}
+    \end{figure}
+  \end{center}
+\end{frame}
+\begin{frame}
+  \frametitle{Setup}
+  To begin with this seminar, you need to have a Scheme interpreter up and running.
+  I personally recommend \textcolor{Blue}{Racket (\url{www.racket-lang.org})}, though other programs may also work (MIT Scheme, Guile, Chez Scheme, etc.).
+\end{frame}
+\begin{frame}[fragile]
+  \frametitle{Setup}
+  Before we start, we need to make sure that every program contains the following definitions of primitive functions:
+  \begin{minted}{scheme}
+    (define add1
+      (lambda (n)
+        (+ n 1)))
+    (define sub1
+      (lambda (n)
+        (- n 1)))
+  \end{minted}
+  It's recommended for this seminar now that you write your program in a single source code file, so that latter definitions of functions can build upon previous already-written ones.
+\end{frame}
+\begin{frame}
+  \frametitle{Setup}
+  \begin{center}
+    \includegraphics[height=0.8\textheight]{screenshot}
+  \end{center}
+\end{frame}
+
+\include{numbers}
+\end{document}

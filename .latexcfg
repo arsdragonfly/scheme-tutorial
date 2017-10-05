@@ -1,0 +1,1 @@
+{ "toolchain" : "%TEX %ARG -shell-escape %DOC" }
