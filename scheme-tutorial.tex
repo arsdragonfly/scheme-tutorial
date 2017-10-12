@@ -64,12 +64,13 @@
   \frametitle{Setup}
   Before we start, we need to make sure that every program contains the following definitions of primitive functions:
   \begin{minted}{scheme}
-    (define add1
-      (lambda (n)
-        (+ n 1)))
-    (define sub1
-      (lambda (n)
-        (- n 1)))
+  (define add1
+    (lambda (n)
+      (+ n 1)))
+  (define sub1
+    (lambda (n)
+      (- n 1)))
+  (define atom? (lambda (x) (not (or (pair? x) (null? x)))))
   \end{minted}
   It's recommended for this seminar now that you write your program in a single source code file, so that latter definitions of functions can build upon previous already-written ones.
 \end{frame}
@@ -81,4 +82,11 @@
 \end{frame}
 
 \include{numbers}
+\include{lists}
+
+\begin{frame}
+  \begin{center}
+    \huge{Thank you!}
+  \end{center}
+\end{frame}
 \end{document}

@@ -1,0 +1,29 @@
+digraph G {
+compound = true;
+subgraph cluster1 {
+label = "";
+cluster11 [ shape = box, label = "(o- (sub1 5) (sub1 5))" ];
+}
+subgraph cluster2 {
+label = "";
+cluster21 [ shape = box, label = "(o- (sub1 4) (sub1 4))" ];
+}
+subgraph cluster3 {
+label = "";
+cluster31 [ shape = box, label = "(o- (sub1 3) (sub1 3))" ];
+}
+subgraph cluster4 {
+label = "";
+cluster41 [ shape = box, label = "(o- (sub1 2) (sub1 2))" ];
+}
+subgraph cluster5 {
+label = "";
+cluster51 [ shape = box, label = "(o- (sub1 1) (sub1 1))" ];
+}
+finalval [shape = box, label = "0"];
+cluster11 -> cluster21 [lhead=cluster2];
+cluster21 -> cluster31 [lhead=cluster3];
+cluster31 -> cluster41 [lhead=cluster4];
+cluster41 -> cluster51 [lhead=cluster5];
+cluster51 -> finalval;
+}
